@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+ <h:body>
+    <h:form id="formulario">
+      <h:outputText id="titulo" value="Agenda" style="font-weight: bold;"/>
+      <h:panelGrid id="dados" columns="2">
+        <h:outputText id="quantLabel" value="Quant:"/>
+       <h:inputText id="quant" label="Quant" value="#{agendarMB.dados.quant}" maxlength="50"/>
+        
+        <h:outputText id="hidzukeLabel" value="Data:"/>
+        <h:inputText id="hidzukelabel="Data" value="#{agendarMB.dados.date}" maxlength="10">
+          <f:convertDateTime id="padraoData" pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+<h:body>
+    <h:form id="formulario">
+      <h:outputText id="titulo" value="Agenda" style="font-weight: bold;"/>
+      <h:panelGrid id="dados" columns="2">
+        <h:outputText id="quantLabel" value="Quant:"/>
+       <h:inputText id="quant" label="Quant" value="#{agendarMB.dados.quant}" maxlength="50"/>
+        
+        <h:outputText id="*****************Label" value="Data:"/>
+        <h:inputText id="******* label="Data" value="#{agendarMB.dados.date}" maxlength="10">
+          <f:convertDateTime id="padraoData" pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+        </h:inputText>
+        <h:outputText id="açucarLabel" value="Açucar:"/>
+        <h:selectOneRadio id="açucar" value="#{agendarMB.dados.açucar}">
+          <f:selectItem itemLabel="Sim" itemValue="Sim"/>
+          <f:selectItem itemLabel="Não" itemValue="Não"/>
+        </h:selectOneRadio>
+    
+      <h:commandButton id="agendar" value="Agendar" action="#{AgendarMB.MakeAgenda}"/>
+      <h:messages id="msg"/>
+        <h:column id="columnQuant">
+          <f:facet name="header">
+            <h:outputText id="headerQuant" value="Quantidade"/>
+          </f:facet>
+          <h:outputText id="valorQuant" value="#{c.quant}"/>
+        </h:column>
+      
+        <h:column id="columnDate">
+          <f:facet name="header">
+            <h:outputText id="headerDate" value="Data:"/>
+          </f:facet>
+          <h:outputText id="valorDate" value="#{c.date}">
+            <f:convertDateTime id="padraoDate" pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+          </h:outputText>
+        </h:column>
+        <h:column id="columnAçucar">
+          <f:facet name="header">
+            <h:outputText id="headerAçucar" value="Açucar"/>
+          </f:facet>
+          <h:outputText id="valorAçucar" value="#{c.açucar}"/>
+        </h:column>
+    </h:form>
+  </h:body>
+</html>
